@@ -139,16 +139,11 @@ export default function Profile() {
                           </div>
                         </Col>
                         <Col xs="3">
-                          {item.status == "success" ? (
-                            "Success"
-                          ) : (
-                            <img
-                              src={imgDumbMerch}
-                              alt="img"
-                              className="img-fluid"
-                              style={{ maxHeight: "120px" }}
-                            />
-                          )}
+                          <div
+                            className={`status-transaction-${item.status} rounded h-100 d-flex align-items-center justify-content-center`}
+                          >
+                            {item.status}
+                          </div>
                         </Col>
                       </Row>
                     </Container>
