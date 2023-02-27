@@ -74,8 +74,7 @@ pipeline {
                 }
             }
         }
-    }
-
+        
         stage('push image ke dockerhub') {
             steps {
                 sshagent([credential]){
@@ -103,3 +102,5 @@ pipeline {
         }
         
     }
+    
+}    
