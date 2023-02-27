@@ -1,4 +1,3 @@
-My Drive
 pipeline {
     agent any
 
