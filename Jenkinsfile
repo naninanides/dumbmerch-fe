@@ -9,7 +9,7 @@ pipeline {
         def credential = 'bhq'
         def server = 'bhq@10.84.198.151'
         def docker_image = 'naninanides/dumbmerch-fe-production'
-        def nama_container = 'backend'
+        def nama_container = 'frontend'
     }
 
     options {
