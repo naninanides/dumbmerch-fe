@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+ frontend:
+   container_name: frontend
+   image: frontend
+   stdin_open: true
+   restart: unless-stopped
+   ports:
+    - 3000:3000
