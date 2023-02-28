@@ -84,17 +84,7 @@ pipeline {
                     docker image push ${docker_image}:latest
                     exit
                     EOF"""
-                }
-            }
-        }
-        stage('curl app') {
-            steps {
-                sshagent([credential]){
-                    sh"""
-                    ssh -o StrictHostKeyChecking=np ${server} << EOF
-                    curl -I 103.37.124.141:3000
-                    exit
-                    EOF"""
+
                 }
             }
         }
