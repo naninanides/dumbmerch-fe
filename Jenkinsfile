@@ -7,7 +7,7 @@ pipeline {
         def directory = "~/dumbmerch-fe"
         def credential = 'bhq'
         def server = 'bhq@10.84.198.151'
-        def docker_image = 'naninanides/dumbmerch-fe-production'
+        def docker_image = 'naninanides/dumbmerch-fe-cicd'
         def nama_container = 'backend'
     }
 
