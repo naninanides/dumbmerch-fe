@@ -84,6 +84,10 @@ pipeline {
                     docker image push ${docker_image}:latest
                     exit
                     EOF"""
+                }
+            }
+        }
+
         stage('testing app pakai curl')
             steps {
                 sshagent([credential]){
@@ -95,7 +99,6 @@ pipeline {
                 }
             }
         }
-    }
     post {
 
         aborted {
@@ -110,5 +113,5 @@ pipeline {
         }
         
     }
-    
+
 }
