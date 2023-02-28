@@ -2,11 +2,7 @@ version: '3.7'
 services:
  frontend:
    container_name: frontend
-<<<<<<< HEAD
    image: naninanides/fe-dumbmerch-production
-=======
-   image: naninanides/dumbmerch-fe-production
->>>>>>> 7e5de214c1897953a81130918ff65aca8b7594b5
    stdin_open: true
    restart: unless-stopped
    ports:
