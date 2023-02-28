@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment{
-        def branch = "Production"
+        def branch = "CICD"
         def nama_repository = "origin"
         def directory = "~/dumbmerch-fe"
         def credential = 'bhq'
