@@ -20,7 +20,7 @@ pipeline {
 
         stage('Notif nih BOS') {
             steps {
-                discordSend description: '', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'Mulai jalan nih! ', webhookURL: 'https://discord.com/api/webhooks/1073903280893202502/FwVTY2tdIp9qekgj3qLn-ta-PuBst9FRg3lqmqFyu0yG_3dYFs5mB7SRCVBFiQACf4ua'
+                discordSend description: 'Proses sedang berjalan', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'Proses CICD', webhookURL: 'https://discord.com/api/webhooks/1080451544039825439/j5kNTYdbxvkbcZlNBdITE5JXXZIfjOI0qbm7lZklz1YFQsGza2VSJC1onRAhg4oVzUEM'
             }
         }
 
@@ -92,14 +92,14 @@ pipeline {
     post {
 
         aborted {
-            discordSend description: 'kok di gagalin', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'proses yang berjalan', webhookURL: 'https://discord.com/api/webhooks/1073903280893202502/FwVTY2tdIp9qekgj3qLn-ta-PuBst9FRg3lqmqFyu0yG_3dYFs5mB7SRCVBFiQACf4ua'
+            discordSend description: 'Proses berjalan di cancel', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'Proses CICD', webhookURL: 'https://discord.com/api/webhooks/1080451544039825439/j5kNTYdbxvkbcZlNBdITE5JXXZIfjOI0qbm7lZklz1YFQsGza2VSJC1onRAhg4oVzUEM'
         }
         failure {
-            discordSend description: 'gagal nih bosss', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'proses yang berjalan', webhookURL: 'https://discord.com/api/webhooks/1073903280893202502/FwVTY2tdIp9qekgj3qLn-ta-PuBst9FRg3lqmqFyu0yG_3dYFs5mB7SRCVBFiQACf4ua'
+            discordSend description: 'Proses berjalan gagal', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'Proses CICD', webhookURL: 'https://discord.com/api/webhooks/1080451544039825439/j5kNTYdbxvkbcZlNBdITE5JXXZIfjOI0qbm7lZklz1YFQsGza2VSJC1onRAhg4oVzUEM'
         }
 
         success {
-            discordSend description: 'berhasil nih bos', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'proses yang berjalan', webhookURL: 'https://discord.com/api/webhooks/1073903280893202502/FwVTY2tdIp9qekgj3qLn-ta-PuBst9FRg3lqmqFyu0yG_3dYFs5mB7SRCVBFiQACf4ua'
+            discordSend description: 'Proses berjalan berhasil', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'Proses CICD', webhookURL: 'https://discord.com/api/webhooks/1080451544039825439/j5kNTYdbxvkbcZlNBdITE5JXXZIfjOI0qbm7lZklz1YFQsGza2VSJC1onRAhg4oVzUEM'
         }
         
     }
