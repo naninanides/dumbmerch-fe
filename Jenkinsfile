@@ -88,6 +88,18 @@ pipeline {
                 }
             }
         }
+        stage('test frontend') {
+            steps {
+                sshagent([credential]){
+                    sh"""ssh -o StrictHostKeyChecking=no ${server} << EOF
+                    cd ${directory}
+                    docker run --rm ${docker_image}:latest npm run test
+                    exit
+                    EOF"""
+                }
+            }
+      }
+}
     }
     post {
 
