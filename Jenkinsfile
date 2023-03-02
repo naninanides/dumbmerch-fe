@@ -88,6 +88,7 @@ pipeline {
                 }
             }
         }
+        
         stage('test frontend') {
             steps {
                 sshagent([credential]){
@@ -97,7 +98,7 @@ pipeline {
                     exit
                     EOF"""
                 }
-            }
+           }
       }
 }
     }
