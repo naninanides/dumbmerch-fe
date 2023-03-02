@@ -2,12 +2,12 @@ pipeline {
     agent any
 
     environment{
-        def branch = "CICD"
+        def branch = "Production"
         def nama_repository = "origin"
         def directory = "~/dumbmerch-fe"
         def credential = 'bhq'
         def server = 'bhq@10.84.198.151'
-        def docker_image = 'naninanides/dumbmerch-fe-cicd'
+        def docker_image = 'naninanides/dumbmerch-fe-production'
         def nama_container = 'backend'
     }
 
@@ -20,7 +20,7 @@ pipeline {
 
         stage('Notif nih BOS') {
             steps {
-                discordSend description: 'Proses sedang berjalan', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'Proses CICD', webhookURL: 'https://discord.com/api/webhooks/1080451544039825439/j5kNTYdbxvkbcZlNBdITE5JXXZIfjOI0qbm7lZklz1YFQsGza2VSJC1onRAhg4oVzUEM'
+                discordSend description: '', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'Mulai jalan nih ', webhookURL: 'https://discord.com/api/webhooks/1073903280893202502/FwVTY2tdIp9qekgj3qLn-ta-PuBst9FRg3lqmqFyu0yG_3dYFs5mB7SRCVBFiQACf4ua'
             }
         }
 
@@ -88,7 +88,6 @@ pipeline {
                 }
             }
         }
-        
         stage('test frontend') {
             steps {
                 sshagent([credential]){
@@ -98,21 +97,19 @@ pipeline {
                     exit
                     EOF"""
                 }
-           }
-      }
-}
+            }
+        }
     }
     post {
 
         aborted {
-            discordSend description: 'Proses berjalan di cancel', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'Proses CICD', webhookURL: 'https://discord.com/api/webhooks/1080451544039825439/j5kNTYdbxvkbcZlNBdITE5JXXZIfjOI0qbm7lZklz1YFQsGza2VSJC1onRAhg4oVzUEM'
+            discordSend description: 'kok di gagalin', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'proses yang berjalan', webhookURL: 'https://discord.com/api/webhooks/1073903280893202502/FwVTY2tdIp9qekgj3qLn-ta-PuBst9FRg3lqmqFyu0yG_3dYFs5mB7SRCVBFiQACf4ua'
         }
         failure {
-            discordSend description: 'Proses berjalan gagal', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'Proses CICD', webhookURL: 'https://discord.com/api/webhooks/1080451544039825439/j5kNTYdbxvkbcZlNBdITE5JXXZIfjOI0qbm7lZklz1YFQsGza2VSJC1onRAhg4oVzUEM'
+            discordSend description: 'gagal nih bosss', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'proses yang berjalan', webhookURL: 'https://discord.com/api/webhooks/1073903280893202502/FwVTY2tdIp9qekgj3qLn-ta-PuBst9FRg3lqmqFyu0yG_3dYFs5mB7SRCVBFiQACf4ua'
         }
-
         success {
-            discordSend description: 'Proses berjalan berhasil', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'Proses CICD', webhookURL: 'https://discord.com/api/webhooks/1080451544039825439/j5kNTYdbxvkbcZlNBdITE5JXXZIfjOI0qbm7lZklz1YFQsGza2VSJC1onRAhg4oVzUEM'
+            discordSend description: 'berhasil nih bos', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'proses yang berjalan', webhookURL: 'https://discord.com/api/webhooks/1073903280893202502/FwVTY2tdIp9qekgj3qLn-ta-PuBst9FRg3lqmqFyu0yG_3dYFs5mB7SRCVBFiQACf4ua'
         }
         
     }
