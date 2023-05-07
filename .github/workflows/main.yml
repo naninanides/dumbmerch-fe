@@ -1,0 +1,23 @@
+name: testing 
+
+on:
+  push:
+    branches: ["CICD"]
+
+jobs:
+  prepare:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ github.token }}
+      - run: |
+          git pull https://${{ github.actor }}:${{ github.token }}@github.com/naninanides/dumbmerch-fe.git CICD
+  deploy:
+    runs-on: self-hosted
+    needs: prepare
+    steps:
+      - name: app_front
+        run: |
+          docker built -t naninanides/dumb-fe:latest .
+          docker compose up -d
